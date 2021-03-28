@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5>
+    Оформление каюты
+</h5>
+{%for i in j %}
+    <h3>
+        Action # {{loop.index}}
+    </h3>
+    <table border="1" cellpadding="0px" width="1200px">
+        <tr>
+            <th>
+                <h1 class="alert alert-secondary bruh">
+                    Title of activity
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-secondary bruh">
+                    Team leader
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-secondary bruh">
+                    Duration
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-secondary bruh">
+                    List of collabarators
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-secondary bruh">
+                    Is finished
+                </h1>
+            </th>
+        </tr>
+        <tr>
+            <th>
+               <h1 class="alert alert-info bruh">
+                    {{ i.job }}
+               </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-info bruh2">
+                    {{ i.user.name }} {{ i.user.surname }}
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-info bruh2">
+                    {{ i.work_size }} hours
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-info bruh2">
+                    {{ i.collaborators }}
+                </h1>
+            </th>
+            <th>
+                <h1 class="alert alert-danger bruh2">
+                    {% if i.is_finished %}
+                        Is finished
+                    {% else %}
+                        Is not finished
+                    {% endif %}
+                </h1>
+            </th>
+        </tr>
+    </table>
+{% endfor %}
+{% endblock %}
